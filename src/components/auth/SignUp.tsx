@@ -81,7 +81,7 @@ const SignUp = () => {
                 />
                 <button
                   type="button"
-                  onClick={() setShowPassword(!showPassword)}
+                  onClick={() => setShowPassword(!showPassword)}
                   className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white transition-colors duration-200"
                 >
                   {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
