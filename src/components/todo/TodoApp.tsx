@@ -55,15 +55,15 @@ const TodoApp = () => {
   });
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
+    <div className="min-h-screen bg-black">
       {/* Header */}
-      <header className="bg-gradient-to-r from-blue-600 to-blue-800 shadow-lg">
+      <header className="bg-gray-900 border-b border-gray-700 shadow-lg">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Button
               variant="ghost"
               size="sm"
-              className="text-white hover:bg-white/20"
+              className="text-gray-300 hover:text-white hover:bg-gray-800 transition-all duration-200 hover:shadow-[0_0_10px_rgba(59,130,246,0.3)]"
               asChild
             >
               <Link to="/">
@@ -76,7 +76,7 @@ const TodoApp = () => {
           <Button
             variant="ghost"
             size="sm"
-            className="text-white hover:bg-white/20"
+            className="text-gray-300 hover:text-white hover:bg-gray-800 transition-all duration-200 hover:shadow-[0_0_10px_rgba(59,130,246,0.3)]"
             asChild
           >
             <Link to="/signin">
@@ -91,35 +91,35 @@ const TodoApp = () => {
       <main className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
           {/* Add Todo Form */}
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 mb-8 border border-white/20">
+          <div className="bg-gray-900 border border-gray-700 rounded-xl p-6 mb-8 hover:border-blue-500 transition-all duration-300 hover:shadow-[0_0_15px_rgba(59,130,246,0.3)]">
             <TodoForm onAddTodo={addTodo} />
           </div>
 
           {/* Filters */}
           <div className="flex gap-4 mb-8">
             <div className="flex items-center gap-2">
-              <Filter className="w-4 h-4 text-white" />
+              <Filter className="w-4 h-4 text-blue-400" />
               <span className="text-white font-medium">Filters:</span>
             </div>
             <Select value={statusFilter} onValueChange={(value: 'all' | 'pending' | 'completed') => setStatusFilter(value)}>
-              <SelectTrigger className="w-40 bg-white/80 backdrop-blur-sm border-slate-300">
+              <SelectTrigger className="w-40 bg-gray-800 border-gray-600 text-white hover:border-blue-500 transition-colors duration-200">
                 <SelectValue placeholder="All Status" />
               </SelectTrigger>
-              <SelectContent className="bg-white border-slate-200">
-                <SelectItem value="all">All Status</SelectItem>
-                <SelectItem value="pending">Pending</SelectItem>
-                <SelectItem value="completed">Completed</SelectItem>
+              <SelectContent className="bg-gray-800 border-gray-600">
+                <SelectItem value="all" className="text-white hover:bg-gray-700">All Status</SelectItem>
+                <SelectItem value="pending" className="text-white hover:bg-gray-700">Pending</SelectItem>
+                <SelectItem value="completed" className="text-white hover:bg-gray-700">Completed</SelectItem>
               </SelectContent>
             </Select>
             <Select value={priorityFilter} onValueChange={(value: 'all' | 'low' | 'medium' | 'high') => setPriorityFilter(value)}>
-              <SelectTrigger className="w-40 bg-white/80 backdrop-blur-sm border-slate-300">
+              <SelectTrigger className="w-40 bg-gray-800 border-gray-600 text-white hover:border-blue-500 transition-colors duration-200">
                 <SelectValue placeholder="All Priorities" />
               </SelectTrigger>
-              <SelectContent className="bg-white border-slate-200">
-                <SelectItem value="all">All Priorities</SelectItem>
-                <SelectItem value="low">Low</SelectItem>
-                <SelectItem value="medium">Medium</SelectItem>
-                <SelectItem value="high">High</SelectItem>
+              <SelectContent className="bg-gray-800 border-gray-600">
+                <SelectItem value="all" className="text-white hover:bg-gray-700">All Priorities</SelectItem>
+                <SelectItem value="low" className="text-white hover:bg-gray-700">Low</SelectItem>
+                <SelectItem value="medium" className="text-white hover:bg-gray-700">Medium</SelectItem>
+                <SelectItem value="high" className="text-white hover:bg-gray-700">High</SelectItem>
               </SelectContent>
             </Select>
           </div>
@@ -128,7 +128,7 @@ const TodoApp = () => {
           <div className="space-y-4">
             {filteredTodos.length === 0 ? (
               <div className="text-center py-12">
-                <p className="text-white/70 text-lg">No tasks found</p>
+                <p className="text-gray-400 text-lg">No tasks found</p>
               </div>
             ) : (
               filteredTodos.map(todo => (

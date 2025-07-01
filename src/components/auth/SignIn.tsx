@@ -28,18 +28,18 @@ const SignIn = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 p-4">
-      <Card className="w-full max-w-md bg-white/95 backdrop-blur-sm shadow-2xl border-0">
+    <div className="min-h-screen flex items-center justify-center bg-black p-4">
+      <Card className="w-full max-w-md bg-gray-900 border-gray-700 shadow-2xl">
         <CardHeader className="text-center">
-          <CardTitle className="text-3xl font-bold text-slate-800">Welcome Back</CardTitle>
-          <CardDescription className="text-slate-600">
+          <CardTitle className="text-3xl font-bold text-white">Welcome Back</CardTitle>
+          <CardDescription className="text-gray-300">
             Sign in to your account to continue
           </CardDescription>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="email" className="text-slate-700 font-medium">Email</Label>
+              <Label htmlFor="email" className="text-gray-200 font-medium">Email</Label>
               <Input
                 id="email"
                 name="email"
@@ -47,12 +47,12 @@ const SignIn = () => {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="Enter your email"
-                className="h-11 border-slate-300 focus:border-blue-500 focus:ring-blue-500"
+                className="h-11 bg-gray-800 border-gray-600 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500"
                 required
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="password" className="text-slate-700 font-medium">Password</Label>
+              <Label htmlFor="password" className="text-gray-200 font-medium">Password</Label>
               <div className="relative">
                 <Input
                   id="password"
@@ -61,13 +61,13 @@ const SignIn = () => {
                   value={formData.password}
                   onChange={handleChange}
                   placeholder="Enter your password"
-                  className="h-11 pr-10 border-slate-300 focus:border-blue-500 focus:ring-blue-500"
+                  className="h-11 pr-10 bg-gray-800 border-gray-600 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500"
                   required
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-slate-500 hover:text-slate-700"
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white transition-colors duration-200"
                 >
                   {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
                 </button>
@@ -75,7 +75,7 @@ const SignIn = () => {
             </div>
             <Button
               type="submit"
-              className="w-full h-11 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-medium transition-all duration-200"
+              className="w-full h-11 bg-blue-600 hover:bg-blue-700 text-white font-medium transition-all duration-300 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] hover:scale-105"
             >
               <LogIn className="w-4 h-4 mr-2" />
               Sign In
@@ -83,9 +83,9 @@ const SignIn = () => {
           </form>
         </CardContent>
         <CardFooter className="text-center">
-          <p className="text-slate-600">
+          <p className="text-gray-300">
             Don't have an account?{' '}
-            <Link to="/signup" className="text-blue-600 hover:text-blue-800 font-medium transition-colors">
+            <Link to="/signup" className="text-blue-400 hover:text-blue-300 font-medium transition-colors duration-200 hover:underline">
               Sign up here
             </Link>
           </p>
