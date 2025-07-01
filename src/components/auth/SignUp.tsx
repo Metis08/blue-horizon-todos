@@ -1,6 +1,5 @@
-
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -8,6 +7,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Eye, EyeOff, UserPlus } from 'lucide-react';
 
 const SignUp = () => {
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -20,6 +20,8 @@ const SignUp = () => {
     e.preventDefault();
     // Handle sign up logic here
     console.log('Sign up attempt:', formData);
+    // Navigate to todo page after successful signup
+    navigate('/todo');
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
